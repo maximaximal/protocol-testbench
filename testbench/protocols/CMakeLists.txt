@@ -1,0 +1,5 @@
+set(PROTOCOLS_SRCS 
+  ${CMAKE_CURRENT_SOURCE_DIR}/protocol.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/continuous.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/event-based.cpp
+  PARENT_SCOPE)
