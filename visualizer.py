@@ -33,17 +33,22 @@ def plot(name: str,data):
     
 def compare(data):
     fig, ax1 = plt.subplots()
+    fontsize = 32
+    fontsize_ticks = 28
+    plt.xticks(fontsize=fontsize_ticks)
+    plt.yticks(fontsize=fontsize_ticks)
 
-    ax1.set_xlabel("Error chance per bit")
-    ax1.set_ylabel("% Successful Transmissions Mean")
-    ax1.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["trips_sd"] * 100)
-    #ax1.scatter(data["Cont-SubErr"]["p"], data["Cont-SubErr"]["succ_mean"] * 100)
-    #ax1.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["succ_mean"] * 100)
+    ax1.set_xlabel("Error chance per bit", fontsize=fontsize)
+    ax1.set_ylabel("% Successful Transmissions Mean", fontsize=fontsize)
+    #ax1.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["trips_sd"] * 100)
+    ax1.scatter(data["Cont-SubErr"]["p"], data["Cont-SubErr"]["succ_mean"] * 100)
+    ax1.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["succ_mean"] * 100)
 
     ax2 = ax1.twinx()
-    ax2.set_ylabel("Byte-Trips Mean (Event-based resending)", color='g')
-    #ax2.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["trips_mean"], color='g')
-    ax2.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["succ_mean"], color='g')
+    ax2.set_ylabel("Byte-Trips Mean (Event-based resending)", color='g', fontsize=fontsize)
+    plt.yticks(fontsize=fontsize_ticks)
+    ax2.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["trips_mean"], color='g')
+    #ax2.scatter(data["Ev-SubErr"]["p"], data["Ev-SubErr"]["succ_mean"], color='g')
 
     plt.show()
 
