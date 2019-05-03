@@ -58,7 +58,9 @@ private:
 
   std::mt19937 m_rng;
 
+  // Chance for errors, p_e
   std::bernoulli_distribution m_corruptBit;
+  // Chance for errors after error already occured, p_b
   std::bernoulli_distribution m_subsequentCorruption;
 };
 } // namespace protocol
