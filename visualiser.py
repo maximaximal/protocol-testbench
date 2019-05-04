@@ -7,6 +7,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import numpy as np
+import sys
+
+simfolder = "./simulations"
+
+if len(sys.argv) == 2:
+    simfolder = sys.argv[1]
 
 def load_data(file: str):
     return np.genfromtxt(file,
@@ -17,10 +23,10 @@ def load_data(file: str):
                                                 'diag_mean', 'diag_med'])
 
 simulations = [
-    ("Cont-NoSubErr", "./simulations/Continuous.csv"),
-    ("Cont-SubErr", "./simulations/Continuous_with_subsequent_corruptions.csv"),
-    ("Ev-NoSubErr", "./simulations/Event-Based.csv"),
-    ("Ev-SubErr", "./simulations/Event-Based_with_subsequent_corruptions.csv"),
+    ("Cont-NoSubErr", simfolder + "/Continuous.csv"),
+    ("Cont-SubErr", simfolder + "/Continuous_with_subsequent_corruptions.csv"),
+    ("Ev-NoSubErr", simfolder + "/Event-Based.csv"),
+    ("Ev-SubErr", simfolder + "/Event-Based_with_subsequent_corruptions.csv"),
 ]
 
 def plot(name: str,data):

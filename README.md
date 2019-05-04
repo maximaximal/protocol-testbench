@@ -25,5 +25,9 @@ simulation results are included in the folder `simulations`.
 Visualising Results
 -------------------
 
-To visualise results, you can use the `visualizer.py` script included
+To visualise results, you can use the `visualiser.py` script included
 in the repository. It generates graphs from the sample simulations.
+
+The visualiser can also take a folder as simulation output source as 
+first parameter. For example, to simulate new results from a build
+folder, run `python visualiser.py build`.
