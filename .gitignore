@@ -336,3 +336,4 @@ compile-commands.json
 compile_commands.json
 ./.cquery_cached_index*
 ./.cquery_cached_index/
+flycheck_visualizer.py
